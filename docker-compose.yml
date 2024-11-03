@@ -1,8 +1,9 @@
 version: "3.8"
 
 services:
+  # PostgreSQL Database Service
   postgres:
-    image: postgres:13.1
+    image: postgres
     container_name: nestjs-database-connection-postgres-db
     restart: always
     environment:
@@ -12,14 +13,17 @@ services:
     volumes:
       - nestjs_postgres_db:/data/postgres
     ports:
-      - 5432:5432
+      - "5432:5432" 
 
+  # Adminer Service for Database Management
   adminer:
     image: adminer
     container_name: nestjs-database-connection-adminer
     restart: always
     ports:
-      - 8080:8080
+      - "8080:8080"  
 
+# Persistent Volumes
 volumes:
   nestjs_postgres_db:
+
