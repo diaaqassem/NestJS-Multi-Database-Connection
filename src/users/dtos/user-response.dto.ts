@@ -1,7 +1,7 @@
 import { Exclude, Expose } from 'class-transformer';
 
 export class UserResponseDto {
-  id: string;
+  id: number;
   username: string;
   email: string;
 

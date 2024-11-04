@@ -8,6 +8,7 @@ async function bootstrap() {
   const logger: Logger = new Logger('bootstrap');
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const configService: ConfigService = app.get(ConfigService);
+  
   const port: number = configService.get<number>('PORT');
 
   await app.listen(port, () => {
